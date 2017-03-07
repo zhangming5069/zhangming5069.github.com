@@ -1,0 +1,29 @@
+#a{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+    width: 400px;
+    height: 200px;
+    background-color: #cccccc;
+    overflow: hidden;
+}
+#b{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    left: -50px;
+    border-radius: 50px ;
+    background-color: #ffcc00;
+}
+#c{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: -50px;
+    bottom: -50px;
+    border-radius: 50px;
+    background-color: #ffcc00;
+}
