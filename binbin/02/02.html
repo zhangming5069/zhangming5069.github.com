@@ -31,38 +31,17 @@ var aqiData = [
   将空气质量指数大于60的城市显示到aqi-list的列表中
   */
 
-
-
-  var b=[];
-  for (var i = 0; i < aqiData.length; i++) {
-    if(aqiData[i][1]>60)
-    b.push(aqiData[i]);
-  }
-  for (var j = 0; j < b.length; j++) {
-    for (var q = j+1; q < b.length; q++) {
-      if (b[j][1]>b[q][1]) {
-        var z=b[j];
-        b[j]=b[q];
-        b[q]=z;
-      }
+aqiData.sort(function(a,b){return b[1]-a[1];});//降序排列
+    var paixu=["一","二","三","四","五","六"];
+    var list=document.getElementById("aqi-list");
+    for(var i=0;i<aqiData.length;i++)
+    {
+        if(aqiData[i][1]>60)
+        {
+            list.innerHTML+="<li>第"+paixu[i]+"名:"+aqiData[i][0]+","+aqiData[i][1]+"</li>";
+        }  
     }
-  
-  console.log(b);
-/*
-for (var r = 0; r < b.length; r++) {
-  var id1=document.getElementById('aqi-list');
-  var uu=id1.appendChild(document.createElement('li'));
-  uu.appendChild(document.createTextNode("第"+(r+1)+"名: "+b[r]));
-}
-*/
-for (var r=0;r<b.length;r++){
-    var el=document.getElementById('aqi-list');
-    var el1=document.createElement('li');
-    var el2=document.createTextNode("第"+(r+1)"名: "+b[r]);
-    el1.appendChild(el2);
-    el.innerHTML=el1;
-
-}
+})();
 
 </script>
 </body>
