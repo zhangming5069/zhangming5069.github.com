@@ -60,7 +60,7 @@ for (var r=0;r<b.length;r++){
     var el1=document.createElement('li');
     var el2=document.createTextNode("第"+(r+1)"名: "+b[r]);
     el1.appendChild(el2);
-    el.appendChild(el1);
+    el.innerHTML=el1;
 
 }
 
